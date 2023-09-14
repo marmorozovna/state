@@ -1,15 +1,17 @@
 package ru.morozevich.stateapp.model.entity;
 
-public class State {
-    private static State state;
+import java.util.EnumSet;
+import java.util.Set;
+
+public enum State {
+    STATE (Region.getAllRegions());
+
+    private Set<Region> allRegions;
 
     private State() {
     }
 
-    public static State getState() {
-        if (state == null) {
-            state = new State();
-        }
-        return state;
+    private State(Set<Region> allRegions) {
+        this.allRegions = allRegions;
     }
 }
