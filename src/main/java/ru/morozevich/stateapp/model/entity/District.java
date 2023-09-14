@@ -4,15 +4,15 @@ public enum District {
 
     CENTAL_DISTRICT(Region.CAPITAL_REGION, true),
     FINANICIAL_DISTRICT(Region.CAPITAL_REGION, false),
-    CULTURAL_DISTRICT (Region.CAPITAL_REGION, false),
-    UPSTREAM_DISTRICT (Region.INDUSTRIAL_REGION,false),
-    DOWNSTREAM_DISTRICT(Region.INDUSTRIAL_REGION,false),
-    MANAGEMENT_DISTRICT(Region.INDUSTRIAL_REGION,true),
-    PLANT_GROWING_DISTRICT (Region.RURAL_REGION,false),
-    PASTORAL_DISTRICT (Region.RURAL_REGION,false),
-    MARKET_DISTRICT (Region.RURAL_REGION,true),
-    LIVING_DISTRICT(Region.ANCIENT_REGION,true),
-    TOURISTIC_DISTRICT (Region.ANCIENT_REGION,false),
+    CULTURAL_DISTRICT(Region.CAPITAL_REGION, false),
+    UPSTREAM_DISTRICT(Region.INDUSTRIAL_REGION, false),
+    DOWNSTREAM_DISTRICT(Region.INDUSTRIAL_REGION, false),
+    MANAGEMENT_DISTRICT(Region.INDUSTRIAL_REGION, true),
+    PLANT_GROWING_DISTRICT(Region.RURAL_REGION, false),
+    PASTORAL_DISTRICT(Region.RURAL_REGION, false),
+    MARKET_DISTRICT(Region.RURAL_REGION, true),
+    LIVING_DISTRICT(Region.ANCIENT_REGION, true),
+    TOURISTIC_DISTRICT(Region.ANCIENT_REGION, false),
     BEACH_DISTRICT(Region.SEESIDE_REGION, false),
     NORTH_DISTRICT(Region.SEESIDE_REGION, true);
 
@@ -31,7 +31,7 @@ public enum District {
         this.isRegionCenter = isRegionCenter;
     }
 
-    public Region getRegion (){
+    public Region getRegion() {
         return this.region;
     }
 
