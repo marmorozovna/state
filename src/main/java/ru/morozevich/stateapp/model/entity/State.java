@@ -7,6 +7,7 @@ public enum State {
     STATE(Region.getAllRegions());
 
     private Set<Region> allRegions;
+    private final City capital = City.CAPITAL_CITY;
 
     private State() {
     }
@@ -15,7 +16,11 @@ public enum State {
         this.allRegions = allRegions;
     }
 
-    public Set<Region> getAllRegions(){
+    public City getCapital() {
+        return this.capital;
+    }
+
+    public Set<Region> getAllRegions() {
         return this.allRegions;
     }
 }
