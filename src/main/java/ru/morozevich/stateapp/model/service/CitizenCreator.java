@@ -5,7 +5,7 @@ import ru.morozevich.stateapp.model.entity.Citizen;
 import java.util.Random;
 
 public class CitizenCreator {
-    public String createName() {
+    public static String createName() {
         int leftLimitChar = 97;
         int rightLimitChar = 122;
         int targetStringLength = (int) (Math.random() * 10 + 5);
@@ -19,7 +19,7 @@ public class CitizenCreator {
         return buffer.toString();
     }
 
-    public int createAge() {
+    public static int createAge() {
         return (int) (Math.random() * 100);
     }
 }

@@ -1,5 +1,7 @@
 package ru.morozevich.stateapp.model.entity;
 
+import ru.morozevich.stateapp.model.service.CitizenCreator;
+
 public class Citizen {
     private int id;
     private String firstname;
@@ -8,6 +10,10 @@ public class Citizen {
     private City residence;
 
     public Citizen() {
+        this.age = CitizenCreator.createAge();
+        this.firstname = CitizenCreator.createName();
+        this.surname = CitizenCreator.createName();
+        this.id = ((Integer)age).hashCode() + firstname.hashCode() + surname.hashCode();
     }
 
     public void setId(int id) {
