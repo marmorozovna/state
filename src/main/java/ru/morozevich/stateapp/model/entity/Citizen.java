@@ -1,6 +1,7 @@
 package ru.morozevich.stateapp.model.entity;
 
 import ru.morozevich.stateapp.model.service.CitizenCreator;
+import ru.morozevich.stateapp.model.service.CityService;
 
 public class Citizen {
     private int id;
@@ -17,10 +18,7 @@ public class Citizen {
         if (this.id < 0) {
             this.id = -this.id;
         }
-    }
-
-    public void setId(int id) {
-        this.id = id;
+        CityService.setRandomCity(this);
     }
 
     public int getId() {
