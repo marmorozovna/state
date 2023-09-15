@@ -13,7 +13,10 @@ public class Citizen {
         this.age = CitizenCreator.createAge();
         this.firstname = CitizenCreator.createName();
         this.surname = CitizenCreator.createName();
-        this.id = ((Integer)age).hashCode() + firstname.hashCode() + surname.hashCode();
+        this.id = ((Integer) age).hashCode() + firstname.hashCode() + surname.hashCode();
+        if (this.id < 0) {
+            this.id = -this.id;
+        }
     }
 
     public void setId(int id) {
