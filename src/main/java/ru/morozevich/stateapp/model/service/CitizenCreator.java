@@ -1,5 +1,9 @@
 package ru.morozevich.stateapp.model.service;
 
+import ru.morozevich.stateapp.model.entity.Citizen;
+
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Random;
 
 public class CitizenCreator {
@@ -18,5 +22,14 @@ public class CitizenCreator {
 
     public static int createAge() {
         return (int) (Math.random() * 100);
+    }
+
+    public static HashSet<Citizen> createCitizen(int quantityCitizen) {
+        HashSet<Citizen> stateCitizen = new HashSet<>(quantityCitizen);
+        for (int i = 0; i < quantityCitizen; i++) {
+            Citizen citizen = new Citizen();
+            stateCitizen.add(citizen);
+        }
+        return stateCitizen;
     }
 }
