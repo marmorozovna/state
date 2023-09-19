@@ -57,4 +57,9 @@ public class Citizen {
     public City getResidence() {
         return residence;
     }
+
+    @Override
+    public String toString(){
+        return getFirstname();
+    }
 }

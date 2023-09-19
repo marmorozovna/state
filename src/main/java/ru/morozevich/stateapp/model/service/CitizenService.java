@@ -31,4 +31,16 @@ public class CitizenService {
         }
         return listCitizenNumberLetter;
     }
+
+    public static ArrayList<Citizen> listCitizenDesiredLetter(char desiredLetter) {
+        HashSet<Citizen> allCitizen = State.STATE.getStateCitizen();
+        ArrayList<Citizen> listCitizenDesiredLetter = new ArrayList<>();
+        for (Citizen citizen : allCitizen) {
+            String name = citizen.getFirstname();
+            if (name.charAt(0) == desiredLetter){
+                listCitizenDesiredLetter.add(citizen);
+            }
+        }
+        return listCitizenDesiredLetter;
+    }
 }

@@ -18,8 +18,8 @@ public class Menu {
                     "3 - Узнать площадь государства" + "\n" +
                     "4 - Узнать областные центры" + "\n" +
                     "5 - Узнать средний возраст жителей" + "\n" +
-                    "6 - Узнать у скольки жителей в имени X букв" + "\n" +
-                    "7 - Узнать у скольки жителей имя начинается с буквы X" + "\n" +
+                    "6 - Узнать жителей, у которых в имени X букв" + "\n" +
+                    "7 - Узнать жителей, у которых имя начинается с буквы X" + "\n" +
                     "8 - Выход");
             input = sc.nextInt();
             switch (input) {
@@ -41,12 +41,12 @@ public class Menu {
                 case 6:
                     System.out.println("Пожалуйста, введите желаемое количество букв:");
                     int quantityLetters = sc.nextInt();
-                    System.out.println(":Жители у которых в имени " + quantityLetters + " букв: " + CitizenService.listCitizenNumberLetter(quantityLetters));
+                    System.out.println("Жители у которых в имени " + quantityLetters + " букв: " + CitizenService.listCitizenNumberLetter(quantityLetters));
                     break;
                 case 7:
                     System.out.println("Пожалуйста, введите желаемую букву:");
-                    int desiredLetter = sc.nextInt();
-                    System.out.println(":Жители у которых в имени перва буква" + desiredLetter + " : " + CitizenService.listCitizenNumberLetter(desiredLetter));
+                    char desiredLetter = sc.next().charAt(0);
+                    System.out.println("Жители у которых в имени перва буква " + desiredLetter + ": " + CitizenService.listCitizenDesiredLetter(desiredLetter));
                     break;
                 case 8:
                     System.out.println("Вы закрыли программу");
