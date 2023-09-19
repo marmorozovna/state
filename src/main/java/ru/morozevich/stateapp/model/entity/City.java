@@ -37,4 +37,7 @@ public enum City {
         this.district = district;
     }
 
+    public District getDistrict() {
+        return district;
+    }
 }
