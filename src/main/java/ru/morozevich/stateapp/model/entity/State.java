@@ -8,7 +8,9 @@ public enum State {
     STATE();
 
     private final City capital = City.CAPITAL_CITY;
-    private HashSet<Citizen> stateCitizen = CitizenCreator.createCitizen(10);
+    private HashSet<Citizen> stateCitizen = CitizenCreator.createCitizen(100);
+
+    private final int square = 357592;
 
     private State() {
     }
@@ -23,5 +25,9 @@ public enum State {
 
     public HashSet<Citizen> getStateCitizen() {
         return this.stateCitizen;
+    }
+
+    public int getSquare() {
+        return square;
     }
 }
