@@ -4,11 +4,11 @@ import java.util.EnumSet;
 import java.util.Set;
 
 public enum Region {
-    CAPITAL_REGION (State.STATE),
-    INDUSTRIAL_REGION (State.STATE),
-    SEESIDE_REGION (State.STATE),
-    RURAL_REGION (State.STATE),
-    ANCIENT_REGION (State.STATE);
+    CAPITAL_REGION(State.STATE),
+    INDUSTRIAL_REGION(State.STATE),
+    SEESIDE_REGION(State.STATE),
+    RURAL_REGION(State.STATE),
+    ANCIENT_REGION(State.STATE);
 
     private State state;
 
@@ -23,7 +23,7 @@ public enum Region {
         return EnumSet.allOf(Region.class);
     }
 
-    public State getState (){
+    public State getState() {
         return this.state;
     }
 }

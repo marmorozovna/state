@@ -2,7 +2,6 @@ package ru.morozevich.stateapp.model.service;
 
 import ru.morozevich.stateapp.model.entity.Citizen;
 
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Random;
 

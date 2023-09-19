@@ -1,47 +1,20 @@
-package ru.morozevich.stateapp.model.entity;
+package ru.morozevich.stateapp.view;
 
-import ru.morozevich.stateapp.model.service.CitizenCreator;
+import ru.morozevich.stateapp.model.entity.Citizen;
+import ru.morozevich.stateapp.model.entity.Region;
 
-import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.HashSet;
 
-public enum State {
-    STATE();
-
-    private final City capital = City.CAPITAL_CITY;
-    private HashSet<Citizen> stateCitizen = CitizenCreator.createCitizen(500);
-
-    private final int square = 357592;
-
-    private State() {
-    }
-
-    public City getCapital() {
-        return this.capital;
-    }
-
-    private State(HashSet<Citizen> stateCitizen) {
-        this.stateCitizen = stateCitizen;
-    }
-
-    public HashSet<Citizen> getStateCitizen() {
-        return this.stateCitizen;
-    }
-
-    public int getSquare() {
-        return square;
-    }
-
-    @Override
-    public String toString() {
-        HashSet<Citizen> stateCitizen = getStateCitizen();
+public class Output {
+    public static String makeBeautifulList(ArrayList<Citizen> citizenArrayList) {
         StringBuilder buffer = new StringBuilder();
         HashSet<Citizen> citizenCapitalRegion = new HashSet<>();
         HashSet<Citizen> citizenIndustrialRegion = new HashSet<>();
         HashSet<Citizen> citizenSeasideRegion = new HashSet<>();
         HashSet<Citizen> citizenRuralRegion = new HashSet<>();
         HashSet<Citizen> citizenAncientRegion = new HashSet<>();
-        for (Citizen citizen : stateCitizen) {
+        for (Citizen citizen : citizenArrayList) {
             switch (citizen.getResidence().getDistrict().getRegion()) {
                 case CAPITAL_REGION -> citizenCapitalRegion.add(citizen);
                 case RURAL_REGION -> citizenRuralRegion.add(citizen);
