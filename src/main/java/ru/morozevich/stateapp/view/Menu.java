@@ -46,7 +46,7 @@ public class Menu {
                 case 7:
                     System.out.println("Пожалуйста, введите желаемую букву:");
                     char desiredLetter = sc.next().charAt(0);
-                    System.out.println("Жители у которых в имени перва буква " + desiredLetter + ": " + "\n" + CitizenService.listCitizenDesiredLetter(desiredLetter));
+                    System.out.println("Жители у которых в имени первая буква " + desiredLetter + ": " + "\n" + Output.makeBeautifulList(CitizenService.listCitizenDesiredLetter(desiredLetter)));
                     break;
                 case 8:
                     System.out.println("Вы закрыли программу");
