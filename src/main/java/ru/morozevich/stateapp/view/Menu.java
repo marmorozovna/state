@@ -1,9 +1,6 @@
 package ru.morozevich.stateapp.view;
 
 import ru.morozevich.stateapp.controller.Controller;
-import ru.morozevich.stateapp.model.entity.State;
-import ru.morozevich.stateapp.model.service.CitizenService;
-import ru.morozevich.stateapp.model.service.RegionService;
 
 public class Menu {
 
@@ -21,21 +18,20 @@ public class Menu {
                     "7 - Узнать жителей, у которых имя начинается с буквы X" + "\n" +
                     "8 - Выход");
             switch (controller.getUserInt()) {
-                case 1 -> System.out.println("Столица государства: " + State.STATE.getCapital());
-                case 2 -> System.out.println("Областей в государстве: " + RegionService.countRegions());
-                case 3 -> System.out.println("Площадь государства: " + State.STATE.getSquare());
-                case 4 -> System.out.println("Все областные центры: " + RegionService.getAllRegionCenters());
-                case 5 ->
-                        System.out.println("Средний возраст: " + CitizenService.getAverageAge(State.STATE.getStateCitizen()));
+                case 1 -> System.out.println("Столица государства: " + controller.getStateCapital());
+                case 2 -> System.out.println("Областей в государстве: " + controller.getQuantityRegions());
+                case 3 -> System.out.println("Площадь государства: " + controller.getStateSquare());
+                case 4 -> System.out.println("Все областные центры: " + controller.getAllRegionCenters());
+                case 5 -> System.out.println("Средний возраст: " + controller.getCitizenAverageAge());
                 case 6 -> {
-                    System.out.println("Пожалуйста, введите желаемое количество букв:");
-                    int quantityLetters = controller.getUserInt();
-                    System.out.println("Жители у которых в имени " + quantityLetters + " букв: " + Output.formatList(CitizenService.listCitizenNumberLetter(quantityLetters)));
+                    System.out.println("Пожалуйста, введите желаемое количество букв в имени:");
+                    int wishedNum = controller.getUserInt();
+                    System.out.println("Жители у которых в имени " + wishedNum + " букв: " + controller.getCitizenDesiredNum(wishedNum));
                 }
                 case 7 -> {
                     System.out.println("Пожалуйста, введите желаемую букву:");
-                    char desiredLetter = controller.getUserChar();
-                    System.out.println("Жители у которых в имени первая буква " + desiredLetter + ": " + "\n" + Output.formatList(CitizenService.listCitizenDesiredLetter(desiredLetter)));
+                    char wishedLetter = controller.getUserChar();
+                    System.out.println("Жители у которых в имени первая буква " + wishedLetter + ": " + "\n" + controller.getCitizenWishedLetter(wishedLetter));
                 }
                 case 8 -> System.out.println("Вы закрыли программу");
             }
