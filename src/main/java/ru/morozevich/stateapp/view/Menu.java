@@ -36,7 +36,7 @@ public class Menu {
                     System.out.println("Все областные центры: " + RegionService.getAllRegionCenters());
                     break;
                 case 5:
-                    System.out.println("Средний возраст: " + CitizenService.getAverageAge());
+                    System.out.println("Средний возраст: " + CitizenService.getAverageAge(State.STATE.getStateCitizen()));
                     break;
                 case 6:
                     System.out.println("Пожалуйста, введите желаемое количество букв:");
