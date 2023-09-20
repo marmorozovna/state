@@ -1,10 +1,8 @@
 package ru.morozevich.stateapp.model.service;
 
 import org.testng.Assert;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import ru.morozevich.stateapp.model.entity.Citizen;
-
 import java.util.HashSet;
 
 
