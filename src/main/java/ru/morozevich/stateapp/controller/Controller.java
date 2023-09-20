@@ -46,10 +46,12 @@ public class Controller {
     }
 
     public String getDesiredCitizen(int wishedNum) {
-        return Output.formatList(CitizenService.listCitizenNumberLetter(wishedNum));
+        Output output = new Output();
+        return output.formatList(CitizenService.listCitizenNumberLetter(wishedNum));
     }
 
     public String getDesiredCitizen(char wishedLetter) {
-        return Output.formatList(CitizenService.listCitizenDesiredLetter(wishedLetter));
+        Output output = new Output();
+        return output.formatList(CitizenService.listCitizenDesiredLetter(wishedLetter));
     }
 }

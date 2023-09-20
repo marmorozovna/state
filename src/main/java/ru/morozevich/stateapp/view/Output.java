@@ -5,7 +5,7 @@ import ru.morozevich.stateapp.model.entity.Citizen;
 import java.util.ArrayList;
 
 public class Output {
-    public static String formatList(ArrayList<Citizen> citizenArrayList) {
+    public  String formatList(ArrayList<Citizen> citizenArrayList) {
         StringBuilder buffer = new StringBuilder();
         ArrayList<Citizen> citizenCapitalRegion = new ArrayList<>();
         ArrayList<Citizen> citizenIndustrialRegion = new ArrayList<>();
@@ -29,7 +29,7 @@ public class Output {
         return buffer.toString();
     }
 
-    public static StringBuilder printRegionCitizen(ArrayList<Citizen> citizenRegion) {
+    public StringBuilder printRegionCitizen(ArrayList<Citizen> citizenRegion) {
         StringBuilder buffer = new StringBuilder();
         buffer.append("\n");
         buffer.append("Название региона: ");
