@@ -9,7 +9,7 @@ public class Menu {
     public void showMenu() {
         int input;
         do {
-            System.out.println("Пожалуйста, выберете действие, введя соотвествующую цифру на клавиатуре:" + "\n" +
+            System.out.println("Пожалуйста, выберите действие, введя соответствующую цифру на клавиатуре:" + "\n" +
                     "1 - Узнать столицу" + "\n" +
                     "2 - Узнать количество областей" + "\n" +
                     "3 - Узнать площадь государства" + "\n" +
@@ -24,7 +24,7 @@ public class Menu {
                 case 2 -> System.out.println("Областей в государстве: " + controller.getQuantityRegions());
                 case 3 -> System.out.println("Площадь государства: " + controller.getStateSquare());
                 case 4 -> System.out.println("Все областные центры: " + controller.getAllRegionCenters());
-                case 5 -> System.out.println("Средний возраст: " + controller.getCitizenAverageAge());
+                case 5 -> System.out.println("Средний возраст жителей: " + controller.getCitizenAverageAge());
                 case 6 -> {
                     System.out.println("Пожалуйста, введите желаемое количество букв в имени:");
                     int wishedNum = controller.getUserInt();
