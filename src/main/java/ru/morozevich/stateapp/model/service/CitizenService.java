@@ -9,14 +9,14 @@ import java.util.HashSet;
 
 public class CitizenService {
 
-    public static int getAverageAge() {
-        int averageAge;
+    public static double getAverageAge() {
+        double averageAge;
         int sumAgeAllCitizen = 0;
         HashSet<Citizen> stateCitizen = State.STATE.getStateCitizen();
         for (Citizen citizen : stateCitizen) {
             sumAgeAllCitizen += citizen.getAge();
         }
-        averageAge = sumAgeAllCitizen / stateCitizen.size();
+        averageAge = (double) sumAgeAllCitizen / stateCitizen.size();
         return averageAge;
     }
 
