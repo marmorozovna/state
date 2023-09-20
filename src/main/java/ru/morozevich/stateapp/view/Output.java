@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 
 public class Output {
-    public static String makeBeautifulList(ArrayList<Citizen> citizenArrayList) {
+    public static String makeFormatList(ArrayList<Citizen> citizenArrayList) {
         StringBuilder buffer = new StringBuilder();
         HashSet<Citizen> citizenCapitalRegion = new HashSet<>();
         HashSet<Citizen> citizenIndustrialRegion = new HashSet<>();
@@ -23,30 +23,35 @@ public class Output {
                 case INDUSTRIAL_REGION -> citizenIndustrialRegion.add(citizen);
             }
         }
+        buffer.append("Название региона: ");
         buffer.append(Region.CAPITAL_REGION);
         buffer.append("\n");
         for (Citizen citizen : citizenCapitalRegion) {
             buffer.append(citizen.toString());
             buffer.append("\n");
         }
+        buffer.append("Название региона: ");
         buffer.append(Region.INDUSTRIAL_REGION);
         buffer.append("\n");
         for (Citizen citizen : citizenIndustrialRegion) {
             buffer.append(citizen.toString());
             buffer.append("\n");
         }
+        buffer.append("Название региона: ");
         buffer.append(Region.SEESIDE_REGION);
         buffer.append("\n");
         for (Citizen citizen : citizenSeasideRegion) {
             buffer.append(citizen.toString());
             buffer.append("\n");
         }
+        buffer.append("Название региона: ");
         buffer.append(Region.RURAL_REGION);
         buffer.append("\n");
         for (Citizen citizen : citizenRuralRegion) {
             buffer.append(citizen.toString());
             buffer.append("\n");
         }
+        buffer.append("Название региона: ");
         buffer.append(Region.ANCIENT_REGION);
         buffer.append("\n");
         for (Citizen citizen : citizenAncientRegion) {
