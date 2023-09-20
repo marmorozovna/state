@@ -4,7 +4,6 @@ import ru.morozevich.stateapp.model.entity.Citizen;
 import ru.morozevich.stateapp.model.entity.State;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashSet;
 
 public class CitizenService {
@@ -24,7 +23,7 @@ public class CitizenService {
         ArrayList<Citizen> listCitizenNumberLetter = new ArrayList<>();
         for (Citizen citizen : allCitizen) {
             String name = citizen.getFirstname();
-            if (name.length() == quantityLetter){
+            if (name.length() == quantityLetter) {
                 listCitizenNumberLetter.add(citizen);
             }
         }
@@ -36,7 +35,7 @@ public class CitizenService {
         ArrayList<Citizen> listCitizenDesiredLetter = new ArrayList<>();
         for (Citizen citizen : allCitizen) {
             String name = citizen.getFirstname();
-            if (name.charAt(0) == desiredLetter){
+            if (name.charAt(0) == desiredLetter) {
                 listCitizenDesiredLetter.add(citizen);
             }
         }

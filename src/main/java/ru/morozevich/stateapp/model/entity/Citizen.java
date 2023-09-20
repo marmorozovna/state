@@ -67,4 +67,8 @@ public class Citizen {
     public String toString() {
         return getFirstname();
     }
+
+    public Region getRegion(){
+        return this.getResidence().getDistrict().getRegion();
+    }
 }
