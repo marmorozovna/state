@@ -41,12 +41,12 @@ public class Menu {
                 case 6:
                     System.out.println("Пожалуйста, введите желаемое количество букв:");
                     int quantityLetters = sc.nextInt();
-                    System.out.println("Жители у которых в имени " + quantityLetters + " букв: " + Output.makeFormatList(CitizenService.listCitizenNumberLetter(quantityLetters)));
+                    System.out.println("Жители у которых в имени " + quantityLetters + " букв: " + Output.formatList(CitizenService.listCitizenNumberLetter(quantityLetters)));
                     break;
                 case 7:
                     System.out.println("Пожалуйста, введите желаемую букву:");
                     char desiredLetter = sc.next().charAt(0);
-                    System.out.println("Жители у которых в имени первая буква " + desiredLetter + ": " + "\n" + Output.makeFormatList(CitizenService.listCitizenDesiredLetter(desiredLetter)));
+                    System.out.println("Жители у которых в имени первая буква " + desiredLetter + ": " + "\n" + Output.formatList(CitizenService.listCitizenDesiredLetter(desiredLetter)));
                     break;
                 case 8:
                     System.out.println("Вы закрыли программу");

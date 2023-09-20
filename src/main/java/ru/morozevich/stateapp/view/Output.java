@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 
 public class Output {
-    public static String makeFormatList(ArrayList<Citizen> citizenArrayList) {
+    public static String formatList(ArrayList<Citizen> citizenArrayList) {
         StringBuilder buffer = new StringBuilder();
         HashSet<Citizen> citizenCapitalRegion = new HashSet<>();
         HashSet<Citizen> citizenIndustrialRegion = new HashSet<>();
