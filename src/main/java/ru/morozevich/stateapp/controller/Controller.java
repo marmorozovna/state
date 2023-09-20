@@ -4,6 +4,7 @@ import ru.morozevich.stateapp.view.Menu;
 
 public class Controller {
     public void startApp() {
-        Menu.showMenu();
+        Menu menu = new Menu();
+        menu.showMenu();
     }
 }
