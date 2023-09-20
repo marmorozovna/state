@@ -7,6 +7,7 @@ public class Menu {
     Controller controller = new Controller();
 
     public void showMenu() {
+        int input;
         do {
             System.out.println("Пожалуйста, выберете действие, введя соотвествующую цифру на клавиатуре:" + "\n" +
                     "1 - Узнать столицу" + "\n" +
@@ -17,7 +18,8 @@ public class Menu {
                     "6 - Узнать жителей, у которых в имени X букв" + "\n" +
                     "7 - Узнать жителей, у которых имя начинается с буквы X" + "\n" +
                     "8 - Выход");
-            switch (controller.getUserInt()) {
+            input = controller.getUserInt();
+            switch (input) {
                 case 1 -> System.out.println("Столица государства: " + controller.getStateCapital());
                 case 2 -> System.out.println("Областей в государстве: " + controller.getQuantityRegions());
                 case 3 -> System.out.println("Площадь государства: " + controller.getStateSquare());
@@ -26,15 +28,15 @@ public class Menu {
                 case 6 -> {
                     System.out.println("Пожалуйста, введите желаемое количество букв в имени:");
                     int wishedNum = controller.getUserInt();
-                    System.out.println("Жители у которых в имени " + wishedNum + " букв: " + controller.getCitizenDesiredNum(wishedNum));
+                    System.out.println("Жители у которых в имени " + wishedNum + " букв: " + controller.getDesiredCitizen(wishedNum));
                 }
                 case 7 -> {
                     System.out.println("Пожалуйста, введите желаемую букву:");
                     char wishedLetter = controller.getUserChar();
-                    System.out.println("Жители у которых в имени первая буква " + wishedLetter + ": " + "\n" + controller.getCitizenWishedLetter(wishedLetter));
+                    System.out.println("Жители у которых в имени первая буква " + wishedLetter + ": " + "\n" + controller.getDesiredCitizen(wishedLetter));
                 }
                 case 8 -> System.out.println("Вы закрыли программу");
             }
-        } while (controller.getUserInt() != 8);
+        } while (input != 8);
     }
 }

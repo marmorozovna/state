@@ -45,11 +45,11 @@ public class Controller {
         return CitizenService.getAverageAge(State.STATE.getStateCitizen());
     }
 
-    public String getCitizenDesiredNum(int wishedNum) {
+    public String getDesiredCitizen(int wishedNum) {
         return Output.formatList(CitizenService.listCitizenNumberLetter(wishedNum));
     }
 
-    public String getCitizenWishedLetter(char wishedLetter) {
+    public String getDesiredCitizen(char wishedLetter) {
         return Output.formatList(CitizenService.listCitizenDesiredLetter(wishedLetter));
     }
 }
