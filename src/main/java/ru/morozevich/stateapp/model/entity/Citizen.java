@@ -21,6 +21,11 @@ public class Citizen {
         CityService.setRandomCity(this);
     }
 
+    public Citizen (int age, String firstname){
+        this.age = age;
+        this.firstname = firstname;
+    }
+
     public int getId() {
         return id;
     }
