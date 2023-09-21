@@ -3,11 +3,10 @@ package ru.morozevich.stateapp.model.service;
 import ru.morozevich.stateapp.model.entity.Citizen;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 
 public class CitizenService {
 
-    public static double getAverageAge(HashSet<Citizen> stateCitizen) {
+    public static double getAverageAge(ArrayList<Citizen> stateCitizen) {
         double averageAge;
         int sumAgeAllCitizen = 0;
         for (Citizen citizen : stateCitizen) {
@@ -17,7 +16,7 @@ public class CitizenService {
         return averageAge;
     }
 
-    public static ArrayList<Citizen> listCitizenWishedQuantityLet(int quantityLetter, HashSet<Citizen> allCitizen) {
+    public static ArrayList<Citizen> listCitizenWishedQuantityLet(int quantityLetter,ArrayList<Citizen> allCitizen) {
         ArrayList<Citizen> CitizenWishedQuantityLet = new ArrayList<>();
         for (Citizen citizen : allCitizen) {
             String name = citizen.getFirstname();
@@ -28,7 +27,7 @@ public class CitizenService {
         return CitizenWishedQuantityLet;
     }
 
-    public static ArrayList<Citizen> listCitizenWishedLetter(char desiredLetter, HashSet<Citizen> allCitizen) {
+    public static ArrayList<Citizen> listCitizenWishedLetter(char desiredLetter, ArrayList<Citizen> allCitizen) {
         ArrayList<Citizen> CitizenWishedLetter = new ArrayList<>();
         for (Citizen citizen : allCitizen) {
             String name = citizen.getFirstname();

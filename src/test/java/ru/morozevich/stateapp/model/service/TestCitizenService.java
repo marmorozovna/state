@@ -1,71 +1,56 @@
 package ru.morozevich.stateapp.model.service;
 
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import ru.morozevich.stateapp.model.entity.Citizen;
 
 import java.util.ArrayList;
-import java.util.HashSet;
-
+import java.util.List;
 
 public class TestCitizenService {
 
-    @Test()
-    public void testGetAverageAge() {
+    @DataProvider(name = "citizenListDataProvider")
+    public static Object [][] createTestDataList (){
         Citizen citizen1 = new Citizen(89, "maichdlsn");
         Citizen citizen2 = new Citizen(45, "ofbwc");
-        Citizen citizen3 = new Citizen(20, "fwmbjgd");
+        Citizen citizen3 = new Citizen(20, "wmbjgd");
         Citizen citizen4 = new Citizen(11, "msdfjkdlv");
         Citizen citizen5 = new Citizen(79, "aichd");
-        HashSet<Citizen> stateCitizen = new HashSet<>();
-        stateCitizen.add(citizen1);
-        stateCitizen.add(citizen2);
-        stateCitizen.add(citizen3);
-        stateCitizen.add(citizen4);
-        stateCitizen.add(citizen5);
-        double actual = CitizenService.getAverageAge(stateCitizen);
-        double expected = 48.8;
+        ArrayList<Citizen> stateCitizen = new ArrayList<>(List.of(citizen1,citizen2,citizen3,citizen4,citizen5));
+        ArrayList<Citizen> expected = new ArrayList<>(List.of(citizen1,citizen4));
+        return new Object[][]{
+                {stateCitizen,expected}
+        };
+    }
+
+    @DataProvider(name = "citizenAvAgeDataProvider")
+    public static Object [][] createTestDataAvAge (){
+        Citizen citizen1 = new Citizen(89, "maichdlsn");
+        Citizen citizen2 = new Citizen(45, "ofbwc");
+        Citizen citizen3 = new Citizen(20, "wmbjgd");
+        Citizen citizen4 = new Citizen(11, "msdfjkdlv");
+        Citizen citizen5 = new Citizen(79, "aichd");
+        ArrayList<Citizen> stateCitizen = new ArrayList<>(List.of(citizen1,citizen2,citizen3,citizen4,citizen5));
+        return new Object[][]{
+                {stateCitizen,48.8}
+        };
+    }
+
+    @Test(dataProvider = "citizenAvAgeDataProvider")
+    public void testGetAverageAge(ArrayList<Citizen> in, double expected) {
+        double actual = CitizenService.getAverageAge(in);
         Assert.assertEquals(actual, expected);
     }
 
-    @Test()
-    public void TestListCitizenWishedQuantityLet() {
-        Citizen citizen1 = new Citizen(89, "maichdlsn");
-        Citizen citizen2 = new Citizen(45, "ofbwc");
-        Citizen citizen3 = new Citizen(20, "mwmbjgd");
-        Citizen citizen4 = new Citizen(11, "msdfjkdlv");
-        Citizen citizen5 = new Citizen(79, "aichd");
-        HashSet<Citizen> stateCitizen = new HashSet<>();
-        stateCitizen.add(citizen1);
-        stateCitizen.add(citizen2);
-        stateCitizen.add(citizen3);
-        stateCitizen.add(citizen4);
-        stateCitizen.add(citizen5);
-        ArrayList<Citizen> expected = new ArrayList<>();
-        expected.add(citizen1);
-        expected.add(citizen4);
-        ArrayList<Citizen> actual = CitizenService.listCitizenWishedQuantityLet(9,stateCitizen);
+    @Test(dataProvider = "citizenListDataProvider")
+    public void TestListCitizenWishedLetterNew(ArrayList<Citizen> in, ArrayList<Citizen> expected) {
+        ArrayList<Citizen> actual = CitizenService.listCitizenWishedLetter('m', in);
         Assert.assertEquals(actual, expected);
     }
-
-    @Test()
-    public void TestListCitizenWishedLetter() {
-        Citizen citizen1 = new Citizen(89, "maichdlsn");
-        Citizen citizen2 = new Citizen(45, "ofbwc");
-        Citizen citizen3 = new Citizen(20, "mwmbjgd");
-        Citizen citizen4 = new Citizen(11, "msdfjkdlv");
-        Citizen citizen5 = new Citizen(79, "aichd");
-        HashSet<Citizen> stateCitizen = new HashSet<>();
-        stateCitizen.add(citizen1);
-        stateCitizen.add(citizen2);
-        stateCitizen.add(citizen3);
-        stateCitizen.add(citizen4);
-        stateCitizen.add(citizen5);
-        ArrayList<Citizen> expected = new ArrayList<>();
-        expected.add(citizen1);
-        expected.add(citizen3);
-        expected.add(citizen4);
-        ArrayList<Citizen> actual = CitizenService.listCitizenWishedLetter('m',stateCitizen);
+    @Test(dataProvider = "citizenListDataProvider")
+    public void TestListCitizenWishedQuantityLetNew(ArrayList<Citizen> in, ArrayList<Citizen> expected) {
+        ArrayList<Citizen> actual = CitizenService.listCitizenWishedQuantityLet(9, in);
         Assert.assertEquals(actual, expected);
     }
 }
