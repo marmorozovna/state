@@ -7,7 +7,7 @@ public class Citizen {
     private int id;
     private String firstname;
     private String surname;
-    private int age;
+    private final int age;
     private City residence;
 
     public Citizen() {
@@ -21,12 +21,12 @@ public class Citizen {
         CityService.setRandomCity(this);
     }
 
-    public Citizen (int age, String firstname){
+    public Citizen(int age, String firstname) {
         this.age = age;
         this.firstname = firstname;
     }
 
-    public Citizen (int age){
+    public Citizen(int age) {
         this.age = age;
     }
 
@@ -51,7 +51,7 @@ public class Citizen {
         return getFirstname();
     }
 
-    public Region getRegion(){
+    public Region getRegion() {
         return this.getResidence().getDistrict().getRegion();
     }
 }

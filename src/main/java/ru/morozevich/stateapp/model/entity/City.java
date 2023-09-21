@@ -1,7 +1,7 @@
 package ru.morozevich.stateapp.model.entity;
 
 public enum City {
-    CAPITAL_CITY(District.CENTAL_DISTRICT,  "Столица"),
+    CAPITAL_CITY(District.CENTAL_DISTRICT, "Столица"),
     NON_CAPITAL_CITY1(District.CULTURAL_DISTRICT),
     NON_CAPITAL_CITY2(District.CULTURAL_DISTRICT),
     NON_CAPITAL_CITY3(District.FINANICIAL_DISTRICT),
@@ -28,20 +28,17 @@ public enum City {
     NON_CAPITAL_CITY24(District.MARKET_DISTRICT),
     NON_CAPITAL_CITY25(District.MARKET_DISTRICT);
 
-    private District district;
+    private final District district;
 
     private String name;
 
-    private City() {
-    }
-
-    private City(District district) {
+    City(District district) {
         this.district = district;
     }
 
-    private City(District district, String name) {
+    City(District district, String name) {
         this(district);
-        this.name=name;
+        this.name = name;
     }
 
     public District getDistrict() {

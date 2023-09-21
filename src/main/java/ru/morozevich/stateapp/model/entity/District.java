@@ -16,24 +16,21 @@ public enum District {
     BEACH_DISTRICT(Region.SEESIDE_REGION, false),
     NORTH_DISTRICT(Region.SEESIDE_REGION, true, "Северный район");
 
-    private Region region;
+    private final Region region;
     private boolean isRegionCenter;
 
     private String name;
 
-    private District() {
-    }
-
-    private District(Region region) {
+    District(Region region) {
         this.region = region;
     }
 
-    private District(Region region, boolean isRegionCenter) {
+    District(Region region, boolean isRegionCenter) {
         this(region);
         this.isRegionCenter = isRegionCenter;
     }
 
-    private District(Region region, boolean isRegionCenter, String name) {
+    District(Region region, boolean isRegionCenter, String name) {
         this(region, isRegionCenter);
         this.name = name;
     }
@@ -47,7 +44,7 @@ public enum District {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return this.name;
     }
 }

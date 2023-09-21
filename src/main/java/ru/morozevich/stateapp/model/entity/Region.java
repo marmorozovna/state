@@ -12,14 +12,11 @@ public enum Region {
     RURAL_REGION(State.STATE, RegionCreator.createName()),
     ANCIENT_REGION(State.STATE, RegionCreator.createName());
 
-    private State state;
+    final State state;
 
-    private String name;
+    final String name;
 
-    private Region() {
-    }
-
-    private Region(State state, String name) {
+    Region(State state, String name) {
         this.state = state;
         this.name = name;
     }
@@ -28,11 +25,7 @@ public enum Region {
         return EnumSet.allOf(Region.class);
     }
 
-    public State getState() {
-        return this.state;
-    }
-
-    public String toString () {
+    public String toString() {
         return this.name;
     }
 }
