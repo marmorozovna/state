@@ -4,7 +4,6 @@ import ru.morozevich.stateapp.model.entity.Citizen;
 import ru.morozevich.stateapp.model.util.NameCreator;
 
 import java.util.HashSet;
-import java.util.Random;
 
 public class CitizenCreator {
     public static String createName() {

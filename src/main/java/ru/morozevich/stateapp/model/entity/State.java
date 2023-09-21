@@ -8,11 +8,11 @@ public enum State {
     STATE();
 
     private final City capital = City.CAPITAL_CITY;
-    private HashSet<Citizen> stateCitizen = CitizenCreator.createCitizen(500);
+    private final HashSet<Citizen> stateCitizen = CitizenCreator.createCitizen(500);
 
     private final int square = 357592;
 
-    private State() {
+    State() {
     }
 
     public City getCapital() {
