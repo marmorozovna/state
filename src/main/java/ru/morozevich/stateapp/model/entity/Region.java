@@ -12,12 +12,9 @@ public enum Region {
     RURAL_REGION(State.STATE, RegionCreator.createName()),
     ANCIENT_REGION(State.STATE, RegionCreator.createName());
 
-    private State state;
+    private final State state;
 
-    private String name;
-
-    private Region() {
-    }
+    private final String name;
 
     private Region(State state, String name) {
         this.state = state;
