@@ -1,7 +1,7 @@
 package ru.morozevich.stateapp.model.entity;
 
 public enum City {
-    CAPITAL_CITY(District.CENTAL_DISTRICT),
+    CAPITAL_CITY(District.CENTAL_DISTRICT,  "Столица"),
     NON_CAPITAL_CITY1(District.CULTURAL_DISTRICT),
     NON_CAPITAL_CITY2(District.CULTURAL_DISTRICT),
     NON_CAPITAL_CITY3(District.FINANICIAL_DISTRICT),
@@ -30,6 +30,8 @@ public enum City {
 
     private District district;
 
+    private String name;
+
     private City() {
     }
 
@@ -37,7 +39,17 @@ public enum City {
         this.district = district;
     }
 
+    private City(District district, String name) {
+        this(district);
+        this.name=name;
+    }
+
     public District getDistrict() {
         return district;
+    }
+
+    @Override
+    public String toString() {
+        return this.name;
     }
 }
