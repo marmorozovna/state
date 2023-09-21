@@ -18,27 +18,25 @@ public class CitizenService {
         return averageAge;
     }
 
-    public static ArrayList<Citizen> listCitizenNumberLetter(int quantityLetter) {
-        HashSet<Citizen> allCitizen = State.STATE.getStateCitizen();
-        ArrayList<Citizen> listCitizenNumberLetter = new ArrayList<>();
+    public static ArrayList<Citizen> listCitizenWishedQuantityLet(int quantityLetter, HashSet<Citizen> allCitizen) {
+        ArrayList<Citizen> CitizenWishedQuantityLet = new ArrayList<>();
         for (Citizen citizen : allCitizen) {
             String name = citizen.getFirstname();
             if (name.length() == quantityLetter) {
-                listCitizenNumberLetter.add(citizen);
+                CitizenWishedQuantityLet.add(citizen);
             }
         }
-        return listCitizenNumberLetter;
+        return CitizenWishedQuantityLet;
     }
 
-    public static ArrayList<Citizen> listCitizenDesiredLetter(char desiredLetter) {
-        HashSet<Citizen> allCitizen = State.STATE.getStateCitizen();
-        ArrayList<Citizen> listCitizenDesiredLetter = new ArrayList<>();
+    public static ArrayList<Citizen> listCitizenWishedLetter(char desiredLetter, HashSet<Citizen> allCitizen) {
+        ArrayList<Citizen> CitizenWishedLetter = new ArrayList<>();
         for (Citizen citizen : allCitizen) {
             String name = citizen.getFirstname();
             if (name.charAt(0) == desiredLetter) {
-                listCitizenDesiredLetter.add(citizen);
+                CitizenWishedLetter.add(citizen);
             }
         }
-        return listCitizenDesiredLetter;
+        return CitizenWishedLetter;
     }
 }

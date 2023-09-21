@@ -1,5 +1,6 @@
 package ru.morozevich.stateapp.controller;
 
+import ru.morozevich.stateapp.model.entity.Citizen;
 import ru.morozevich.stateapp.model.entity.City;
 import ru.morozevich.stateapp.model.entity.State;
 import ru.morozevich.stateapp.model.service.CitizenService;
@@ -7,6 +8,7 @@ import ru.morozevich.stateapp.model.service.RegionService;
 import ru.morozevich.stateapp.view.Menu;
 import ru.morozevich.stateapp.view.Output;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Controller {
@@ -46,12 +48,14 @@ public class Controller {
     }
 
     public String getDesiredCitizen(int wishedNum) {
+        ArrayList<Citizen> desiredCitizen = CitizenService.listCitizenWishedQuantityLet(wishedNum, State.STATE.getStateCitizen());
         Output output = new Output();
-        return output.formatList(CitizenService.listCitizenNumberLetter(wishedNum));
+        return output.formatList(desiredCitizen);
     }
 
     public String getDesiredCitizen(char wishedLetter) {
+        ArrayList<Citizen> desiredCitizen = CitizenService.listCitizenWishedLetter(wishedLetter, State.STATE.getStateCitizen());
         Output output = new Output();
-        return output.formatList(CitizenService.listCitizenDesiredLetter(wishedLetter));
+        return output.formatList(desiredCitizen);
     }
 }
