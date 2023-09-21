@@ -16,7 +16,7 @@ public class CitizenService {
         return averageAge;
     }
 
-    public static ArrayList<Citizen> listCitizenWishedQuantityLet(int quantityLetter,ArrayList<Citizen> allCitizen) {
+    public static ArrayList<Citizen> listCitizenWishedQuantityLet(int quantityLetter, ArrayList<Citizen> allCitizen) {
         ArrayList<Citizen> CitizenWishedQuantityLet = new ArrayList<>();
         for (Citizen citizen : allCitizen) {
             String name = citizen.getFirstname();

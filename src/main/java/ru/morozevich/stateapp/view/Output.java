@@ -5,7 +5,7 @@ import ru.morozevich.stateapp.model.entity.Citizen;
 import java.util.ArrayList;
 
 public class Output {
-    public  String formatList(ArrayList<Citizen> citizenArrayList) {
+    public String formatList(ArrayList<Citizen> citizenArrayList) {
         StringBuilder buffer = new StringBuilder();
         ArrayList<Citizen> citizenCapitalRegion = new ArrayList<>();
         ArrayList<Citizen> citizenIndustrialRegion = new ArrayList<>();
@@ -21,11 +21,11 @@ public class Output {
                 case INDUSTRIAL_REGION -> citizenIndustrialRegion.add(citizen);
             }
         }
-        buffer.append (printRegionCitizen(citizenCapitalRegion));
-        buffer.append (printRegionCitizen(citizenIndustrialRegion));
-        buffer.append (printRegionCitizen(citizenSeasideRegion));
-        buffer.append (printRegionCitizen(citizenRuralRegion));
-        buffer.append (printRegionCitizen(citizenAncientRegion));
+        buffer.append(printRegionCitizen(citizenCapitalRegion));
+        buffer.append(printRegionCitizen(citizenIndustrialRegion));
+        buffer.append(printRegionCitizen(citizenSeasideRegion));
+        buffer.append(printRegionCitizen(citizenRuralRegion));
+        buffer.append(printRegionCitizen(citizenAncientRegion));
         return buffer.toString();
     }
 

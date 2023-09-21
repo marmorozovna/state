@@ -21,19 +21,16 @@ public enum District {
 
     private String name;
 
-    private District() {
-    }
-
-    private District(Region region) {
+    District(Region region) {
         this.region = region;
     }
 
-    private District(Region region, boolean isRegionCenter) {
+    District(Region region, boolean isRegionCenter) {
         this(region);
         this.isRegionCenter = isRegionCenter;
     }
 
-    private District(Region region, boolean isRegionCenter, String name) {
+    District(Region region, boolean isRegionCenter, String name) {
         this(region, isRegionCenter);
         this.name = name;
     }
@@ -47,7 +44,7 @@ public enum District {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return this.name;
     }
 }
