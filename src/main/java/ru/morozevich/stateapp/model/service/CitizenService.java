@@ -1,7 +1,6 @@
 package ru.morozevich.stateapp.model.service;
 
 import ru.morozevich.stateapp.model.entity.Citizen;
-import ru.morozevich.stateapp.model.entity.State;
 
 import java.util.ArrayList;
 import java.util.HashSet;
