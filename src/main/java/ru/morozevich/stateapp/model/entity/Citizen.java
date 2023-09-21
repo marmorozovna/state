@@ -26,29 +26,12 @@ public class Citizen {
         this.firstname = firstname;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
+    public Citizen (int age){
+        this.age = age;
     }
 
     public String getFirstname() {
         return firstname;
-    }
-
-
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
-
-    public String getSurname() {
-        return surname;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
     }
 
     public int getAge() {
