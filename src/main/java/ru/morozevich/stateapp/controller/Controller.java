@@ -6,7 +6,7 @@ import ru.morozevich.stateapp.model.entity.State;
 import ru.morozevich.stateapp.model.service.CitizenService;
 import ru.morozevich.stateapp.model.service.RegionService;
 import ru.morozevich.stateapp.view.Output;
-import ru.morozevich.stateapp.model.util.Input;
+import ru.morozevich.stateapp.model.service.Input;
 
 import java.util.ArrayList;
 
