@@ -5,26 +5,20 @@ import ru.morozevich.stateapp.model.entity.City;
 import ru.morozevich.stateapp.model.entity.State;
 import ru.morozevich.stateapp.model.service.CitizenService;
 import ru.morozevich.stateapp.model.service.RegionService;
-import ru.morozevich.stateapp.view.Menu;
 import ru.morozevich.stateapp.view.Output;
+import ru.morozevich.stateapp.model.util.Input;
 
 import java.util.ArrayList;
-import java.util.Scanner;
+
 
 public class Controller {
-    Scanner sc = new Scanner(System.in);
-
-    public void startApp() {
-        Menu menu = new Menu();
-        menu.showMenu();
-    }
 
     public int getUserInt() {
-        return sc.nextInt();
+        return Input.getUserInt();
     }
 
     public char getUserChar() {
-        return sc.next().charAt(0);
+        return Input.getUserChar();
     }
 
     public City getStateCapital() {
