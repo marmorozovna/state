@@ -1,4 +1,4 @@
-package ru.morozevich.stateapp.view;
+package ru.morozevich.stateapp.model.util;
 
 import ru.morozevich.stateapp.controller.Controller;
 
