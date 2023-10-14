@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Input {
     static Scanner sc = new Scanner(System.in);
+
     public static int getUserInt() {
         return sc.nextInt();
     }

@@ -1,7 +1,6 @@
 package ru.morozevich.stateapp._main;
 
-import ru.morozevich.stateapp.controller.Controller;
-import ru.morozevich.stateapp.view.Menu;
+import ru.morozevich.stateapp.model.util.Menu;
 
 public class _Main {
     public static void main(String[] args) {

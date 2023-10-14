@@ -29,7 +29,7 @@ public enum Region {
         return this.state;
     }
 
-    public String toString () {
+    public String toString() {
         return this.name;
     }
 }
