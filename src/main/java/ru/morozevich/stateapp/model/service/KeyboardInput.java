@@ -2,7 +2,7 @@ package ru.morozevich.stateapp.model.service;
 
 import java.util.Scanner;
 
-public class Input {
+public class KeyboardInput {
     static Scanner sc = new Scanner(System.in);
 
     public static int getUserInt() {

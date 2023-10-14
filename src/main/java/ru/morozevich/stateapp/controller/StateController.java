@@ -4,22 +4,13 @@ import ru.morozevich.stateapp.model.entity.Citizen;
 import ru.morozevich.stateapp.model.entity.City;
 import ru.morozevich.stateapp.model.entity.State;
 import ru.morozevich.stateapp.model.service.CitizenService;
-import ru.morozevich.stateapp.model.service.Input;
 import ru.morozevich.stateapp.model.service.RegionService;
-import ru.morozevich.stateapp.view.Output;
+import ru.morozevich.stateapp.view.ResultWriter;
 
 import java.util.ArrayList;
 
 
-public class Controller {
-
-    public int getUserInt() {
-        return Input.getUserInt();
-    }
-
-    public char getUserChar() {
-        return Input.getUserChar();
-    }
+public class StateController {
 
     public City getStateCapital() {
         return State.STATE.getCapital();
@@ -43,13 +34,13 @@ public class Controller {
 
     public String getDesiredCitizen(int wishedNum) {
         ArrayList<Citizen> desiredCitizen = CitizenService.listCitizenWishedQuantityLet(wishedNum, State.STATE.getStateCitizen());
-        Output output = new Output();
-        return output.formatList(desiredCitizen);
+        ResultWriter resultWriter = new ResultWriter();
+        return resultWriter.formatList(desiredCitizen);
     }
 
     public String getDesiredCitizen(char wishedLetter) {
         ArrayList<Citizen> desiredCitizen = CitizenService.listCitizenWishedLetter(wishedLetter, State.STATE.getStateCitizen());
-        Output output = new Output();
-        return output.formatList(desiredCitizen);
+        ResultWriter resultWriter = new ResultWriter();
+        return resultWriter.formatList(desiredCitizen);
     }
 }

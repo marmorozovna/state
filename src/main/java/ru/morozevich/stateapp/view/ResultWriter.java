@@ -4,7 +4,7 @@ import ru.morozevich.stateapp.model.entity.Citizen;
 
 import java.util.ArrayList;
 
-public class Output {
+public class ResultWriter {
     public String formatList(ArrayList<Citizen> citizenArrayList) {
         StringBuilder buffer = new StringBuilder();
         ArrayList<Citizen> citizenCapitalRegion = new ArrayList<>();

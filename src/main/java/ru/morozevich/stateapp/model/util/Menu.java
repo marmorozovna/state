@@ -1,10 +1,12 @@
 package ru.morozevich.stateapp.model.util;
 
-import ru.morozevich.stateapp.controller.Controller;
+import ru.morozevich.stateapp.controller.IOController;
+import ru.morozevich.stateapp.controller.StateController;
 
 public class Menu {
 
-    Controller controller = new Controller();
+    StateController stateController = new StateController();
+    IOController ioController = new IOController();
 
     public void showMenu() {
         int input;
@@ -18,22 +20,22 @@ public class Menu {
                     "6 - Узнать жителей, у которых в имени X букв" + "\n" +
                     "7 - Узнать жителей, у которых имя начинается с буквы X" + "\n" +
                     "8 - Выход");
-            input = controller.getUserInt();
+            input = ioController.getUserInt();
             switch (input) {
-                case 1 -> System.out.println("Столица государства: " + controller.getStateCapital());
-                case 2 -> System.out.println("Областей в государстве: " + controller.getQuantityRegions());
-                case 3 -> System.out.println("Площадь государства: " + controller.getStateSquare());
-                case 4 -> System.out.println("Все областные центры: " + controller.getAllRegionCenters());
-                case 5 -> System.out.println("Средний возраст жителей: " + controller.getCitizenAverageAge());
+                case 1 -> System.out.println("Столица государства: " + stateController.getStateCapital());
+                case 2 -> System.out.println("Областей в государстве: " + stateController.getQuantityRegions());
+                case 3 -> System.out.println("Площадь государства: " + stateController.getStateSquare());
+                case 4 -> System.out.println("Все областные центры: " + stateController.getAllRegionCenters());
+                case 5 -> System.out.println("Средний возраст жителей: " + stateController.getCitizenAverageAge());
                 case 6 -> {
                     System.out.println("Пожалуйста, введите желаемое количество букв в имени:");
-                    int wishedNum = controller.getUserInt();
-                    System.out.println("Жители у которых в имени " + wishedNum + " букв: " + controller.getDesiredCitizen(wishedNum));
+                    int wishedNum = ioController.getUserInt();
+                    System.out.println("Жители у которых в имени " + wishedNum + " букв: " + stateController.getDesiredCitizen(wishedNum));
                 }
                 case 7 -> {
                     System.out.println("Пожалуйста, введите желаемую букву:");
-                    char wishedLetter = controller.getUserChar();
-                    System.out.println("Жители у которых в имени первая буква " + wishedLetter + ": " + "\n" + controller.getDesiredCitizen(wishedLetter));
+                    char wishedLetter = ioController.getUserChar();
+                    System.out.println("Жители у которых в имени первая буква " + wishedLetter + ": " + "\n" + stateController.getDesiredCitizen(wishedLetter));
                 }
                 case 8 -> System.out.println("Вы закрыли программу");
             }
