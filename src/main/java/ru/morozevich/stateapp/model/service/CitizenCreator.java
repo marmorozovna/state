@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class CitizenCreator {
     public static String createName() {
         NameCreator nameCreator = new NameCreator();
-        return nameCreator.createName(97, 122);
+        return nameCreator.createName();
     }
 
     public static int createAge() {

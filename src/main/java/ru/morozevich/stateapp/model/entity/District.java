@@ -1,24 +1,10 @@
 package ru.morozevich.stateapp.model.entity;
 
-public enum District {
+import ru.morozevich.stateapp.model.util.NameCreator;
 
-    CENTAL_DISTRICT(Region.CAPITAL_REGION, true, "Центральный район"),
-    FINANICIAL_DISTRICT(Region.CAPITAL_REGION, false),
-    CULTURAL_DISTRICT(Region.CAPITAL_REGION, false),
-    UPSTREAM_DISTRICT(Region.INDUSTRIAL_REGION, false),
-    DOWNSTREAM_DISTRICT(Region.INDUSTRIAL_REGION, false),
-    MANAGEMENT_DISTRICT(Region.INDUSTRIAL_REGION, true, "Управленческий район"),
-    PLANT_GROWING_DISTRICT(Region.RURAL_REGION, false),
-    PASTORAL_DISTRICT(Region.RURAL_REGION, false),
-    MARKET_DISTRICT(Region.RURAL_REGION, true, "Рыночный район"),
-    LIVING_DISTRICT(Region.ANCIENT_REGION, true, "Жилой район"),
-    TOURISTIC_DISTRICT(Region.ANCIENT_REGION, false),
-    BEACH_DISTRICT(Region.SEESIDE_REGION, false),
-    NORTH_DISTRICT(Region.SEESIDE_REGION, true, "Северный район");
-
-    private final Region region;
+public class District {
+    private Region region;
     private boolean isRegionCenter;
-
     private String name;
 
     District(Region region) {
@@ -32,7 +18,8 @@ public enum District {
 
     District(Region region, boolean isRegionCenter, String name) {
         this(region, isRegionCenter);
-        this.name = name;
+        NameCreator nameCreator = new NameCreator();
+        this.name = nameCreator.createName();
     }
 
     public Region getRegion() {
