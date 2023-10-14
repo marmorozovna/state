@@ -1,47 +1,49 @@
 package ru.morozevich.stateapp.model.entity;
 
-import ru.morozevich.stateapp.model.service.CitizenCreator;
-
 import java.util.ArrayList;
 import java.util.Random;
 
 public class State {
     private static State instance;
 
+    private City capital;
+
+    private ArrayList<Region> regions = new ArrayList<>();
+
     private State() {
+        Random random = new Random();
+        int regionQuantity = random.nextInt(5, 11);
+        for (int i = 0; i < regionQuantity + 1; i++) {
+            Region region = new Region();
+            regions.add(region);
+        }
     }
+
     public static State getInstance() {
         if (instance == null) {
             instance = new State();
         }
         return instance;
     }
-
-    private City capital;
-    private final ArrayList<Citizen> stateCitizen = CitizenCreator.createCitizen(1000);
     private int square;
 
-    public City getCapital() {
-        return this.capital;
-    }
-
-    public ArrayList<Citizen> getStateCitizen() {
-        return this.stateCitizen;
-    }
-
     public int getSquare() {
-        if (square == 0){
+        if (square == 0) {
             this.setSquare();
         }
         return square;
     }
 
-    private void setSquare (){
+    private void setSquare() {
         Random random = new Random();
-        this.square = random.nextInt(44,1700);
+        this.square = random.nextInt(44, 1700);
     }
 
-    private void setCapital(){
+    public City getCapital() {
+        return capital;
+    }
 
+    public ArrayList<Region> getRegions() {
+        return regions;
     }
 }

@@ -1,27 +1,26 @@
 package ru.morozevich.stateapp.model.entity;
 
-import ru.morozevich.stateapp.model.service.RegionCreator;
 import ru.morozevich.stateapp.model.util.NameCreator;
 
-import java.util.EnumSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.Random;
 
 public class Region {
-    private final State state;
 
-    private final String name;
+    private String name;
 
-    private Region(String name) {
-        this.state = State.getInstance();
+    private boolean isCapitalCenter;
+
+    private ArrayList<District> districts = new ArrayList<>();
+
+    Region() {
         NameCreator nameCreator = new NameCreator();
         this.name = nameCreator.createName();
-    }
-
-    public State getState() {
-        return this.state;
-    }
-
-    public String toString() {
-        return this.name;
+        Random random = new Random();
+        int districtQuantity = random.nextInt(5, 11);
+        for (int i = 0; i < districtQuantity + 1; i++) {
+            District district = new District(this);
+            districts.add(district);
+        }
     }
 }

@@ -1,7 +1,6 @@
 package ru.morozevich.stateapp.model.entity;
 
-import ru.morozevich.stateapp.model.service.CitizenCreator;
-import ru.morozevich.stateapp.model.service.CityService;
+import ru.morozevich.stateapp.model.util.NameCreator;
 
 public class Citizen {
     private int id;
@@ -12,12 +11,13 @@ public class Citizen {
 
     private static int countId;
 
-    public Citizen() {
-        this.age = CitizenCreator.createAge();
-        this.firstname = CitizenCreator.createName();
-        this.surname = CitizenCreator.createName();
+    public Citizen(City residence) {
+        this.age = (int) (Math.random() * 100);
+        NameCreator nameCreator = new NameCreator();
+        this.firstname = nameCreator.createName();
+        this.surname = nameCreator.createName();
         this.id = ++countId;
-        CityService.setRandomCity(this);
+        this.residence = residence;
     }
 
     public Citizen(int age, String firstname) {
@@ -35,10 +35,6 @@ public class Citizen {
 
     public int getAge() {
         return age;
-    }
-
-    public void setResidence(City residence) {
-        this.residence = residence;
     }
 
     public City getResidence() {
