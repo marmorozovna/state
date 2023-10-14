@@ -13,9 +13,11 @@ public class State {
     private State() {
         Random random = new Random();
         int regionQuantity = random.nextInt(5, 11);
-        for (int i = 0; i < regionQuantity + 1; i++) {
-            Region region = new Region();
-            regions.add(region);
+        Region capitalRegion = new Region(true);
+        regions.add(capitalRegion);
+        for (int i = 0; i < regionQuantity; i++) {
+            Region otherRegion = new Region(false);
+            regions.add(otherRegion);
         }
     }
 

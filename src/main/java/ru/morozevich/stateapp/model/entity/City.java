@@ -19,7 +19,7 @@ public class City {
 
     private static ArrayList <Citizen> allCitizens = new ArrayList<>();
 
-    City(District district) {
+    City(District district, boolean isDistrictCenter,boolean isCapital) {
         this.district = district;
         NameCreator nameCreator = new NameCreator();
         this.name = nameCreator.createName();

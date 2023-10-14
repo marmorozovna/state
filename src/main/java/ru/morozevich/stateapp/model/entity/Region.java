@@ -13,7 +13,8 @@ public class Region {
 
     private ArrayList<District> districts = new ArrayList<>();
 
-    Region() {
+    Region(boolean isCapitalCenter) {
+        this.isCapitalCenter = isCapitalCenter;
         NameCreator nameCreator = new NameCreator();
         this.name = nameCreator.createName();
         Random random = new Random();
@@ -22,5 +23,9 @@ public class Region {
             District district = new District(this);
             districts.add(district);
         }
+    }
+
+    public boolean isCapitalCenter() {
+        return isCapitalCenter;
     }
 }
