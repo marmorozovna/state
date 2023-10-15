@@ -19,9 +19,9 @@ public class CitizenService {
         return averageAge;
     }
 
-    public static ArrayList<Citizen> listCitizenWishedQuantityLet(int quantityLetter) {
+    public static ArrayList<Citizen> listCitizenWishedQuantityLet(int quantityLetter, ArrayList<Citizen> allCitizens) {
         ArrayList<Citizen> CitizenWishedQuantityLet = new ArrayList<>();
-        for (Citizen citizen : City.getAllCitizens()) {
+        for (Citizen citizen : allCitizens) {
             String name = citizen.getFirstname();
             if (name.length() == quantityLetter) {
                 CitizenWishedQuantityLet.add(citizen);
@@ -30,9 +30,9 @@ public class CitizenService {
         return CitizenWishedQuantityLet;
     }
 
-    public static ArrayList<Citizen> listCitizenWishedLetter(char desiredLetter) {
+    public static ArrayList<Citizen> listCitizenWishedLetter(char desiredLetter, ArrayList<Citizen> allCitizens) {
         ArrayList<Citizen> CitizenWishedLetter = new ArrayList<>();
-        for (Citizen citizen : City.getAllCitizens()) {
+        for (Citizen citizen : allCitizens) {
             String name = citizen.getFirstname();
             if (name.charAt(0) == desiredLetter) {
                 CitizenWishedLetter.add(citizen);
