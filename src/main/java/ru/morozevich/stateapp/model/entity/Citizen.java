@@ -6,7 +6,7 @@ public class Citizen {
     private int id;
     private String firstname;
     private String surname;
-    private final int age;
+    private int age;
     private City residence;
 
     private static int countId;

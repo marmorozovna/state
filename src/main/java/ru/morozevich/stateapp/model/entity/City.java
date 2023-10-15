@@ -27,10 +27,10 @@ public class City {
         this.name = nameCreator.createName();
         Random random = new Random();
         int citizenQuantity = random.nextInt(1, 51);
-        for (int i = 0; i < citizenQuantity + 1; i++) {
+        for (int i = 0; i < citizenQuantity; i++) {
             Citizen citizen = new Citizen(this);
             citizens.add(citizen);
-            citizens.add(citizen);
+            allCitizens.add(citizen);
         }
     }
 

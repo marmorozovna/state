@@ -2,18 +2,20 @@ package ru.morozevich.stateapp.model.service;
 
 import ru.morozevich.stateapp.model.entity.Citizen;
 import ru.morozevich.stateapp.model.entity.City;
+import ru.morozevich.stateapp.model.entity.State;
 
 import java.util.ArrayList;
 
 public class CitizenService {
 
-    public static double getAverageAge() {
+    public static double getAverageAge(ArrayList<Citizen> allCitizens) {
+        State.getInstance();
         double averageAge;
         int sumAgeAllCitizen = 0;
-        for (Citizen citizen : City.getAllCitizens()) {
+        for (Citizen citizen : allCitizens) {
             sumAgeAllCitizen += citizen.getAge();
         }
-        averageAge = (double) sumAgeAllCitizen / City.getAllCitizens().size();
+        averageAge = (double) sumAgeAllCitizen / allCitizens.size();
         return averageAge;
     }
 
