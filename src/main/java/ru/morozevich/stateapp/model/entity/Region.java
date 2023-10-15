@@ -19,9 +19,16 @@ public class Region {
         this.name = nameCreator.createName();
         Random random = new Random();
         int districtQuantity = random.nextInt(5, 11);
-        for (int i = 0; i < districtQuantity + 1; i++) {
-            District district = new District(this);
-            districts.add(district);
+        if (isCapitalCenter) {
+            District capitalDistrict = new District(this, true, true);
+            districts.add(capitalDistrict);
+        } else {
+            District regionCenterDistrict = new District(this, false, true);
+            districts.add(regionCenterDistrict);
+        }
+        for (int i = 0; i < districtQuantity; i++) {
+            District otherDistrict = new District(this, false, false);
+            districts.add(otherDistrict);
         }
     }
 

@@ -1,18 +1,17 @@
 package ru.morozevich.stateapp.controller;
 
-import ru.morozevich.stateapp.model.entity.Citizen;
 import ru.morozevich.stateapp.model.entity.City;
 import ru.morozevich.stateapp.model.entity.State;
 import ru.morozevich.stateapp.model.service.CitizenService;
-import ru.morozevich.stateapp.view.ResultWriter;
-
-import java.util.ArrayList;
+import ru.morozevich.stateapp.model.service.CityService;
 
 
 public class StateController {
-// вынести логику в service
+
+    // вынести логику в service
     public City getStateCapital() {
-        return State.getInstance().getCapital();
+        CityService cityService = new CityService();
+        return cityService.findCapital();
     }
 
     public int getQuantityRegions() {
@@ -24,7 +23,8 @@ public class StateController {
     }
 
     public String getAllRegionCenters() {
-        return City.getAllCitizens().toString();
+        CityService cityService = new CityService();
+        return cityService.findRegionCentres().toString();
     }
 
     public double getCitizenAverageAge() {

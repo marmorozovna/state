@@ -5,9 +5,6 @@ import java.util.Random;
 
 public class State {
     private static State instance;
-
-    private City capital;
-
     private ArrayList<Region> regions = new ArrayList<>();
 
     private State() {
@@ -18,6 +15,7 @@ public class State {
         for (int i = 0; i < regionQuantity; i++) {
             Region otherRegion = new Region(false);
             regions.add(otherRegion);
+
         }
     }
 
@@ -27,6 +25,7 @@ public class State {
         }
         return instance;
     }
+
     private int square;
 
     public int getSquare() {
@@ -39,10 +38,6 @@ public class State {
     private void setSquare() {
         Random random = new Random();
         this.square = random.nextInt(44, 1700);
-    }
-
-    public City getCapital() {
-        return capital;
     }
 
     public ArrayList<Region> getRegions() {

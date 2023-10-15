@@ -9,24 +9,26 @@ public class City {
 
     private final District district;
 
-    private boolean isDistrictCenter;
+    private boolean isRegionCenter;
 
     private boolean isCapital;
 
     private final String name;
 
-    private ArrayList <Citizen> citizens = new ArrayList<>();
+    private ArrayList<Citizen> citizens = new ArrayList<>();
 
-    private static ArrayList <Citizen> allCitizens = new ArrayList<>();
+    private static ArrayList<Citizen> allCitizens = new ArrayList<>();
 
-    City(District district, boolean isDistrictCenter,boolean isCapital) {
+    City(District district, boolean isRegionCenter, boolean isCapital) {
         this.district = district;
+        this.isRegionCenter = isRegionCenter;
+        this.isCapital = isCapital;
         NameCreator nameCreator = new NameCreator();
         this.name = nameCreator.createName();
         Random random = new Random();
         int citizenQuantity = random.nextInt(1, 51);
         for (int i = 0; i < citizenQuantity + 1; i++) {
-        Citizen citizen = new Citizen(this);
+            Citizen citizen = new Citizen(this);
             citizens.add(citizen);
             citizens.add(citizen);
         }
@@ -40,6 +42,13 @@ public class City {
         return allCitizens;
     }
 
+    public boolean isCapital() {
+        return this.isCapital;
+    }
+
+    public boolean isRegionCenter() {
+        return this.isRegionCenter;
+    }
     @Override
     public String toString() {
         return this.name;
