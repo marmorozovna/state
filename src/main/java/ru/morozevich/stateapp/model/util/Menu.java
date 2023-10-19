@@ -2,7 +2,6 @@ package ru.morozevich.stateapp.model.util;
 
 import ru.morozevich.stateapp.controller.IOController;
 import ru.morozevich.stateapp.controller.StateController;
-import ru.morozevich.stateapp.model.entity.City;
 
 public class Menu {
 
@@ -12,15 +11,16 @@ public class Menu {
     public void showMenu() {
         int input;
         do {
-            System.out.println("Пожалуйста, выберите действие, введя соответствующую цифру на клавиатуре:" + "\n" +
-                    "1 - Узнать столицу" + "\n" +
-                    "2 - Узнать количество областей" + "\n" +
-                    "3 - Узнать площадь государства" + "\n" +
-                    "4 - Узнать областные центры" + "\n" +
-                    "5 - Узнать средний возраст жителей" + "\n" +
-                    "6 - Узнать жителей, у которых в имени X букв" + "\n" +
-                    "7 - Узнать жителей, у которых имя начинается с буквы X" + "\n" +
-                    "8 - Выход");
+            System.out.println("""
+                    Пожалуйста, выберите действие, введя соответствующую цифру на клавиатуре:
+                    1 - Узнать столицу
+                    2 - Узнать количество областей
+                    3 - Узнать площадь государства
+                    4 - Узнать областные центры
+                    5 - Узнать средний возраст жителей
+                    6 - Узнать жителей, у которых в имени X букв
+                    7 - Узнать жителей, у которых имя начинается с буквы X
+                    8 - Выход""");
             input = ioController.getUserInt();
             switch (input) {
                 case 1 -> System.out.println("Столица государства: " + stateController.getStateCapital());
@@ -32,13 +32,13 @@ public class Menu {
                     System.out.println("Пожалуйста, введите желаемое количество букв в имени:");
                     int wishedNum = ioController.getUserInt();
                     System.out.println("Жители у которых в имени " + wishedNum + " букв: ");
-                    stateController.findCitizen(wishedNum, City.getAllCitizens());
+                    stateController.findCitizen(wishedNum, stateController.getAllCitizen());
                 }
                 case 7 -> {
                     System.out.println("Пожалуйста, введите желаемую букву:");
                     char wishedLetter = ioController.getUserChar();
                     System.out.println("Жители у которых в имени первая буква " + wishedLetter + ": " + "\n");
-                    stateController.findCitizen(wishedLetter, City.getAllCitizens());
+                    stateController.findCitizen(wishedLetter, stateController.getAllCitizen());
                 }
                 case 8 -> System.out.println("Вы закрыли программу");
             }

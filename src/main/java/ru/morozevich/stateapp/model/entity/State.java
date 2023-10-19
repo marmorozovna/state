@@ -43,4 +43,8 @@ public class State {
     public ArrayList<Region> getRegions() {
         return regions;
     }
+
+    public ArrayList <Citizen> getAllCitizens (){
+        return City.getAllCitizens();
+    }
 }

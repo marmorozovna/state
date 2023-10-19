@@ -31,6 +31,10 @@ public class StateController {
         return cityService.findRegionCentres().toString();
     }
 
+    public ArrayList <Citizen> getAllCitizen (){
+        return State.getInstance().getAllCitizens();
+    }
+
     public double getCitizenAverageAge() {
         return CitizenService.getAverageAge(City.getAllCitizens());
     }
