@@ -7,7 +7,7 @@ import ru.morozevich.stateapp.model.entity.State;
 import java.util.ArrayList;
 
 public class ResultWriter {
-    public String printCitizens(ArrayList<Citizen> foundCitizen) {
+    public void printCitizens(ArrayList<Citizen> foundCitizen) {
         StringBuilder buffer = new StringBuilder();
         buffer.append("\n");
         for (Region region : State.getInstance().getRegions()) {
@@ -22,6 +22,6 @@ public class ResultWriter {
                 }
             }
         }
-        return buffer.toString();
+        System.out.println(buffer.toString());
     }
 }

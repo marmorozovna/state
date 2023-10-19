@@ -35,15 +35,15 @@ public class StateController {
         return CitizenService.getAverageAge(City.getAllCitizens());
     }
 
-    public String findCitizen(int wishedNum, ArrayList<Citizen> allCitizens) {
+    public void findCitizen(int wishedNum, ArrayList<Citizen> allCitizens) {
         ArrayList<Citizen> foundCitizens = CitizenService.findCitizen(wishedNum, allCitizens);
-        ResultWriter resultWriter = new ResultWriter();
-        return resultWriter.printCitizens(foundCitizens);
+        IOController ioController = new IOController();
+        ioController.printCitizen(foundCitizens);
     }
 
-    public String findCitizen(char wishedLetter, ArrayList<Citizen> allCitizens) {
+    public void findCitizen(char wishedLetter, ArrayList<Citizen> allCitizens) {
         ArrayList<Citizen> foundCitizens = CitizenService.findCitizen(wishedLetter, allCitizens);
-        ResultWriter resultWriter = new ResultWriter();
-        return resultWriter.printCitizens(foundCitizens);
+        IOController ioController = new IOController();
+        ioController.printCitizen(foundCitizens);
     }
 }
