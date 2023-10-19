@@ -5,6 +5,7 @@ import ru.morozevich.stateapp.model.entity.City;
 import ru.morozevich.stateapp.model.entity.State;
 import ru.morozevich.stateapp.model.service.CitizenService;
 import ru.morozevich.stateapp.model.service.CityService;
+import ru.morozevich.stateapp.model.service.StateService;
 
 import java.util.ArrayList;
 
@@ -16,11 +17,11 @@ public class StateController {
     }
 
     public int getQuantityRegions() {
-        return State.getInstance().getRegions().size();
+        return StateService.getQuantityRegions();
     }
 
     public int getStateSquare() {
-        return State.getInstance().getSquare();
+        return StateService.getStateSquare();
     }
 
     public String getAllRegionCenters() {
@@ -29,7 +30,7 @@ public class StateController {
     }
 
     public ArrayList<Citizen> getAllCitizen() {
-        return State.getInstance().getAllCitizens();
+        return StateService.getAllCitizen();
     }
 
     public double getCitizenAverageAge() {
