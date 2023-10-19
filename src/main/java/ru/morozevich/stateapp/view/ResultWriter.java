@@ -1,7 +1,6 @@
 package ru.morozevich.stateapp.view;
 
 import ru.morozevich.stateapp.model.entity.Citizen;
-import ru.morozevich.stateapp.model.entity.City;
 import ru.morozevich.stateapp.model.entity.Region;
 import ru.morozevich.stateapp.model.entity.State;
 
