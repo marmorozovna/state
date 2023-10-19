@@ -23,9 +23,10 @@ public class StateController {
         return StateService.getStateSquare();
     }
 
-    public String getAllRegionCenters() {
+    public void getAllRegionCenters() {
         CityService cityService = new CityService();
-        return cityService.findRegionCentres().toString();
+        IOController ioController = new IOController();
+        ioController.printCities(cityService.findRegionCentres());
     }
 
     public ArrayList<Citizen> getAllCitizen() {

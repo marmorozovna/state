@@ -26,7 +26,10 @@ public class Menu {
                 case 1 -> System.out.println("Столица государства: " + stateController.getStateCapital());
                 case 2 -> System.out.println("Областей в государстве: " + stateController.getQuantityRegions());
                 case 3 -> System.out.println("Площадь государства: " + stateController.getStateSquare() + " га");
-                case 4 -> System.out.println("Все областные центры: " + stateController.getAllRegionCenters());
+                case 4 -> {
+                    System.out.println("Все областные центры: ");
+                    stateController.getAllRegionCenters();
+                }
                 case 5 -> System.out.println("Средний возраст жителей: " + stateController.getCitizenAverageAge());
                 case 6 -> {
                     System.out.println("Пожалуйста, введите желаемое количество букв в имени:");

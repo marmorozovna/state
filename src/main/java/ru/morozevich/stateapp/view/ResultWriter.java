@@ -1,6 +1,7 @@
 package ru.morozevich.stateapp.view;
 
 import ru.morozevich.stateapp.model.entity.Citizen;
+import ru.morozevich.stateapp.model.entity.City;
 import ru.morozevich.stateapp.model.entity.Region;
 import ru.morozevich.stateapp.model.entity.State;
 
@@ -22,6 +23,10 @@ public class ResultWriter {
                 }
             }
         }
-        System.out.println(buffer.toString());
+        System.out.println(buffer);
+    }
+
+    public void printCities(ArrayList<City> cities) {
+        System.out.println(cities.toString());
     }
 }
