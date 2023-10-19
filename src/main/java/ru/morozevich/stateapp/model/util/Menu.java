@@ -23,14 +23,18 @@ public class Menu {
                     8 - Выход""");
             input = ioController.getUserInt();
             switch (input) {
-                case 1 -> System.out.println("Столица государства: " + stateController.getStateCapital());
-                case 2 -> System.out.println("Областей в государстве: " + stateController.getQuantityRegions());
-                case 3 -> System.out.println("Площадь государства: " + stateController.getStateSquare() + " га");
+                case 1 -> System.out.println("Столица государства: "
+                        + stateController.getStateCapital());
+                case 2 -> System.out.println("Областей в государстве: "
+                        + stateController.getQuantityRegions());
+                case 3 -> System.out.println("Площадь государства: "
+                        + stateController.getStateSquare() + " га");
                 case 4 -> {
                     System.out.println("Все областные центры: ");
                     stateController.getAllRegionCenters();
                 }
-                case 5 -> System.out.println("Средний возраст жителей: " + stateController.getCitizenAverageAge());
+                case 5 -> System.out.println("Средний возраст жителей: "
+                        + stateController.getCitizenAverageAge(stateController.getAllCitizen()));
                 case 6 -> {
                     System.out.println("Пожалуйста, введите желаемое количество букв в имени:");
                     int wishedNum = ioController.getUserInt();
@@ -40,7 +44,8 @@ public class Menu {
                 case 7 -> {
                     System.out.println("Пожалуйста, введите желаемую букву:");
                     char wishedLetter = ioController.getUserChar();
-                    System.out.println("Жители у которых в имени первая буква " + wishedLetter + ": " + "\n");
+                    System.out.println("Жители у которых в имени первая буква " + wishedLetter
+                            + ":\n");
                     stateController.findCitizen(wishedLetter, stateController.getAllCitizen());
                 }
                 case 8 -> System.out.println("Вы закрыли программу");
