@@ -48,15 +48,15 @@ public class TestCitizenService {
         Assert.assertEquals(actual, expected);
     }
 
-//    @Test(dataProvider = "citizenListDataProvider")
-//    public void TestListCitizenWishedLetterNew(ArrayList<Citizen> in, ArrayList<Citizen> expected) {
-//        ArrayList<Citizen> actual = CitizenService.listCitizenWishedLetter('m', in);
-//        Assert.assertEquals(actual, expected);
-//    }
-//
-//    @Test(dataProvider = "citizenListDataProvider")
-//    public void TestListCitizenWishedQuantityLetNew(ArrayList<Citizen> in, ArrayList<Citizen> expected) {
-//        ArrayList<Citizen> actual = CitizenService.listCitizenWishedQuantityLet(9, in);
-//        Assert.assertEquals(actual, expected);
-//    }
+    @Test(dataProvider = "citizenListDataProvider")
+    public void TestListCitizenWishedLetterNew(ArrayList<Citizen> in, ArrayList<Citizen> expected) {
+        ArrayList<Citizen> actual = CitizenService.findCitizen('m', in);
+        Assert.assertEquals(actual, expected);
+    }
+
+    @Test(dataProvider = "citizenListDataProvider")
+    public void TestListCitizenWishedQuantityLetNew(ArrayList<Citizen> in, ArrayList<Citizen> expected) {
+        ArrayList<Citizen> actual = CitizenService.findCitizen(9, in);
+        Assert.assertEquals(actual, expected);
+    }
 }
