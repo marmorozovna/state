@@ -1,7 +1,6 @@
 package ru.morozevich.stateapp.model.service;
 
 import ru.morozevich.stateapp.model.entity.Citizen;
-import ru.morozevich.stateapp.model.entity.City;
 import ru.morozevich.stateapp.model.entity.State;
 
 import java.util.ArrayList;
@@ -19,7 +18,7 @@ public class CitizenService {
         return averageAge;
     }
 
-    public static ArrayList<Citizen> listCitizenWishedQuantityLet(int quantityLetter, ArrayList<Citizen> allCitizens) {
+    public static ArrayList<Citizen> findCitizen(int quantityLetter, ArrayList<Citizen> allCitizens) {
         ArrayList<Citizen> CitizenWishedQuantityLet = new ArrayList<>();
         for (Citizen citizen : allCitizens) {
             String name = citizen.getFirstname();
@@ -27,10 +26,11 @@ public class CitizenService {
                 CitizenWishedQuantityLet.add(citizen);
             }
         }
+
         return CitizenWishedQuantityLet;
     }
 
-    public static ArrayList<Citizen> listCitizenWishedLetter(char desiredLetter, ArrayList<Citizen> allCitizens) {
+    public static ArrayList<Citizen> findCitizen(char desiredLetter, ArrayList<Citizen> allCitizens) {
         ArrayList<Citizen> CitizenWishedLetter = new ArrayList<>();
         for (Citizen citizen : allCitizens) {
             String name = citizen.getFirstname();
