@@ -1,44 +1,28 @@
 package ru.morozevich.stateapp.view;
 
 import ru.morozevich.stateapp.model.entity.Citizen;
+import ru.morozevich.stateapp.model.entity.City;
+import ru.morozevich.stateapp.model.entity.Region;
+import ru.morozevich.stateapp.model.entity.State;
 
 import java.util.ArrayList;
 
 public class ResultWriter {
-//    public String formatList(ArrayList<Citizen> citizenArrayList) {
-//        StringBuilder buffer = new StringBuilder();
-//        ArrayList<Citizen> citizenCapitalRegion = new ArrayList<>();
-//        ArrayList<Citizen> citizenIndustrialRegion = new ArrayList<>();
-//        ArrayList<Citizen> citizenSeasideRegion = new ArrayList<>();
-//        ArrayList<Citizen> citizenRuralRegion = new ArrayList<>();
-//        ArrayList<Citizen> citizenAncientRegion = new ArrayList<>();
-//        for (Citizen citizen : citizenArrayList) {
-//            switch (citizen.getRegion()) {
-//                case CAPITAL_REGION -> citizenCapitalRegion.add(citizen);
-//                case RURAL_REGION -> citizenRuralRegion.add(citizen);
-//                case ANCIENT_REGION -> citizenAncientRegion.add(citizen);
-//                case SEESIDE_REGION -> citizenSeasideRegion.add(citizen);
-//                case INDUSTRIAL_REGION -> citizenIndustrialRegion.add(citizen);
-//            }
-//        }
-//        buffer.append(printRegionCitizen(citizenCapitalRegion));
-//        buffer.append(printRegionCitizen(citizenIndustrialRegion));
-//        buffer.append(printRegionCitizen(citizenSeasideRegion));
-//        buffer.append(printRegionCitizen(citizenRuralRegion));
-//        buffer.append(printRegionCitizen(citizenAncientRegion));
-//        return buffer.toString();
-//    }
-
-//    public StringBuilder printRegionCitizen(ArrayList<Citizen> citizenRegion) {
-//        StringBuilder buffer = new StringBuilder();
-//        buffer.append("\n");
-//        buffer.append("Название региона: ");
-//        buffer.append(citizenRegion.get(0).getRegion());
-//        buffer.append("\n");
-//        for (Citizen citizen : citizenRegion) {
-//            buffer.append(citizen.toString());
-//            buffer.append("\n");
-//        }
-//        return buffer;
-//    }
+    public String printCitizens(ArrayList<Citizen> foundCitizen) {
+        StringBuilder buffer = new StringBuilder();
+        buffer.append("\n");
+        for (Region region : State.getInstance().getRegions()) {
+            buffer.append("Название региона: ")
+                    .append(region)
+                    .append("\n");
+            for (Citizen citizen : foundCitizen) {
+                if (citizen.getResidence().getDistrict().getRegion() == region) {
+                    buffer.append("Житель: ")
+                            .append(citizen)
+                            .append("\n");
+                }
+            }
+        }
+        return buffer.toString();
+    }
 }

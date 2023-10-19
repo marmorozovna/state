@@ -19,25 +19,25 @@ public class CitizenService {
     }
 
     public static ArrayList<Citizen> findCitizen(int quantityLetter, ArrayList<Citizen> allCitizens) {
-        ArrayList<Citizen> CitizenWishedQuantityLet = new ArrayList<>();
+        ArrayList<Citizen> foundCitizen = new ArrayList<>();
         for (Citizen citizen : allCitizens) {
             String name = citizen.getFirstname();
             if (name.length() == quantityLetter) {
-                CitizenWishedQuantityLet.add(citizen);
+                foundCitizen.add(citizen);
             }
         }
 
-        return CitizenWishedQuantityLet;
+        return foundCitizen;
     }
 
     public static ArrayList<Citizen> findCitizen(char desiredLetter, ArrayList<Citizen> allCitizens) {
-        ArrayList<Citizen> CitizenWishedLetter = new ArrayList<>();
+        ArrayList<Citizen> foundCitizen = new ArrayList<>();
         for (Citizen citizen : allCitizens) {
             String name = citizen.getFirstname();
             if (name.charAt(0) == desiredLetter) {
-                CitizenWishedLetter.add(citizen);
+                foundCitizen.add(citizen);
             }
         }
-        return CitizenWishedLetter;
+        return foundCitizen;
     }
 }

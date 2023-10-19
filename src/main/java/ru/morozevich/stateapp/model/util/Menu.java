@@ -2,6 +2,7 @@ package ru.morozevich.stateapp.model.util;
 
 import ru.morozevich.stateapp.controller.IOController;
 import ru.morozevich.stateapp.controller.StateController;
+import ru.morozevich.stateapp.model.entity.City;
 
 public class Menu {
 
@@ -30,12 +31,12 @@ public class Menu {
                 case 6 -> {
                     System.out.println("Пожалуйста, введите желаемое количество букв в имени:");
                     int wishedNum = ioController.getUserInt();
-//                    System.out.println("Жители у которых в имени " + wishedNum + " букв: " + stateController.getDesiredCitizen(wishedNum));
+                    System.out.println("Жители у которых в имени " + wishedNum + " букв: " + stateController.findCitizen(wishedNum, City.getAllCitizens()));
                 }
                 case 7 -> {
                     System.out.println("Пожалуйста, введите желаемую букву:");
                     char wishedLetter = ioController.getUserChar();
-//                    System.out.println("Жители у которых в имени первая буква " + wishedLetter + ": " + "\n" + stateController.getDesiredCitizen(wishedLetter));
+                    System.out.println("Жители у которых в имени первая буква " + wishedLetter + ": " + "\n" + stateController.findCitizen(wishedLetter,City.getAllCitizens()));
                 }
                 case 8 -> System.out.println("Вы закрыли программу");
             }

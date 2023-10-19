@@ -1,6 +1,6 @@
 package ru.morozevich.stateapp.model.entity;
 
-import ru.morozevich.stateapp.model.util.NameCreator;
+import ru.morozevich.stateapp.model.service.NameCreator;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -34,5 +34,10 @@ public class Region {
 
     public boolean isCapitalCenter() {
         return isCapitalCenter;
+    }
+
+    @Override
+    public String toString() {
+        return this.name;
     }
 }

@@ -1,9 +1,13 @@
 package ru.morozevich.stateapp.controller;
 
+import ru.morozevich.stateapp.model.entity.Citizen;
 import ru.morozevich.stateapp.model.entity.City;
 import ru.morozevich.stateapp.model.entity.State;
 import ru.morozevich.stateapp.model.service.CitizenService;
 import ru.morozevich.stateapp.model.service.CityService;
+import ru.morozevich.stateapp.view.ResultWriter;
+
+import java.util.ArrayList;
 
 
 public class StateController {
@@ -31,15 +35,15 @@ public class StateController {
         return CitizenService.getAverageAge(City.getAllCitizens());
     }
 
-//    public String getDesiredCitizen(int wishedNum) {
-//        ArrayList<Citizen> desiredCitizen = CitizenService.listCitizenWishedQuantityLet(wishedNum);
-//        ResultWriter resultWriter = new ResultWriter();
-//        return resultWriter.formatList(desiredCitizen);
-//    }
-//
-//    public String getDesiredCitizen(char wishedLetter) {
-//        ArrayList<Citizen> desiredCitizen = CitizenService.listCitizenWishedLetter(wishedLetter);
-//        ResultWriter resultWriter = new ResultWriter();
-//        return resultWriter.formatList(desiredCitizen);
-//    }
+    public String findCitizen(int wishedNum, ArrayList<Citizen> allCitizens) {
+        ArrayList<Citizen> foundCitizens = CitizenService.findCitizen(wishedNum, allCitizens);
+        ResultWriter resultWriter = new ResultWriter();
+        return resultWriter.printCitizens(foundCitizens);
+    }
+
+    public String findCitizen(char wishedLetter, ArrayList<Citizen> allCitizens) {
+        ArrayList<Citizen> foundCitizens = CitizenService.findCitizen(wishedLetter, allCitizens);
+        ResultWriter resultWriter = new ResultWriter();
+        return resultWriter.printCitizens(foundCitizens);
+    }
 }

@@ -1,4 +1,4 @@
-package ru.morozevich.stateapp.model.util;
+package ru.morozevich.stateapp.model.service;
 
 import java.util.Random;
 
