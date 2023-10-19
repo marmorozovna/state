@@ -8,7 +8,6 @@ import java.util.ArrayList;
 public class CitizenService {
 
     public static double getAverageAge(ArrayList<Citizen> allCitizens) {
-        State.getInstance();
         double averageAge;
         int sumAgeAllCitizen = 0;
         for (Citizen citizen : allCitizens) {

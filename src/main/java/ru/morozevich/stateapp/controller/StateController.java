@@ -34,7 +34,7 @@ public class StateController {
     }
 
     public double getCitizenAverageAge() {
-        return CitizenService.getAverageAge(City.getAllCitizens());
+        return CitizenService.getAverageAge(StateService.getAllCitizen());
     }
 
     public void findCitizen(int wishedNum, ArrayList<Citizen> allCitizens) {
