@@ -24,7 +24,7 @@ public class District {
             City capitalCity = new City(this, true, true);
             cities.add(capitalCity);
             allCities.add(capitalCity);
-        } else if (isRegionCenter){
+        } else if (isRegionCenter) {
             City regionCenterCity = new City(this, true, false);
             cities.add(regionCenterCity);
             allCities.add(regionCenterCity);

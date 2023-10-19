@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class CityService {
 
-    public City findCapital(){
+    public City findCapital() {
         State.getInstance();
         City capital = null;
         for (int cityIndex = 0; cityIndex < District.getAllCities().size(); cityIndex++) {
@@ -19,9 +19,9 @@ public class CityService {
         return capital;
     }
 
-    public ArrayList <City> findRegionCentres(){
+    public ArrayList<City> findRegionCentres() {
         State.getInstance();
-        ArrayList <City> regionCenters = new ArrayList<>();
+        ArrayList<City> regionCenters = new ArrayList<>();
         for (int cityIndex = 0; cityIndex < District.getAllCities().size(); cityIndex++) {
             if (District.getAllCities().get(cityIndex).isRegionCenter()) {
                 regionCenters.add(District.getAllCities().get(cityIndex));

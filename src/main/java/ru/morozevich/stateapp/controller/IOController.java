@@ -15,7 +15,7 @@ public class IOController {
         return KeyboardInput.getUserChar();
     }
 
-    public void printCitizen (ArrayList <Citizen> citizens){
+    public void printCitizen(ArrayList<Citizen> citizens) {
         ResultWriter resultWriter = new ResultWriter();
         resultWriter.printCitizens(citizens);
     }

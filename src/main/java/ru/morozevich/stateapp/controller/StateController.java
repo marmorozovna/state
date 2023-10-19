@@ -5,14 +5,11 @@ import ru.morozevich.stateapp.model.entity.City;
 import ru.morozevich.stateapp.model.entity.State;
 import ru.morozevich.stateapp.model.service.CitizenService;
 import ru.morozevich.stateapp.model.service.CityService;
-import ru.morozevich.stateapp.view.ResultWriter;
 
 import java.util.ArrayList;
 
 
 public class StateController {
-
-    // вынести логику в service
     public City getStateCapital() {
         CityService cityService = new CityService();
         return cityService.findCapital();
@@ -31,7 +28,7 @@ public class StateController {
         return cityService.findRegionCentres().toString();
     }
 
-    public ArrayList <Citizen> getAllCitizen (){
+    public ArrayList<Citizen> getAllCitizen() {
         return State.getInstance().getAllCitizens();
     }
 

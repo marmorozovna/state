@@ -49,6 +49,7 @@ public class City {
     public boolean isRegionCenter() {
         return this.isRegionCenter;
     }
+
     @Override
     public String toString() {
         return this.name;
