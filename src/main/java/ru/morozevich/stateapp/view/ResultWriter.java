@@ -27,6 +27,20 @@ public class ResultWriter {
     }
 
     public void printCities(ArrayList<City> cities) {
-        System.out.println(cities.toString());
+        StringBuilder buffer = new StringBuilder();
+        buffer.append("\n");
+        for (Region region : State.getInstance().getRegions()) {
+            buffer.append("Название региона: ")
+                    .append(region)
+                    .append("\n");
+            for (City city : cities) {
+                if (city.getDistrict().getRegion() == region) {
+                    buffer.append("Областной центр: ")
+                            .append(city)
+                            .append("\n");
+                }
+            }
+        }
+        System.out.println(buffer);
     }
 }
