@@ -7,7 +7,6 @@ import java.util.Random;
 public class Region {
 
     private String name;
-
     private boolean isCapitalCenter;
 
     Region(boolean isCapitalCenter) {
