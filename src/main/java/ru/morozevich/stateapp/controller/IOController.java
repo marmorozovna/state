@@ -21,7 +21,7 @@ public class IOController {
         resultWriter.printCitizens(citizens);
     }
 
-    public void printCities (ArrayList<City> cities){
+    public void printCities(ArrayList<City> cities) {
         ResultWriter resultWriter = new ResultWriter();
         resultWriter.printCities(cities);
     }

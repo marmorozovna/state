@@ -8,7 +8,6 @@ public class Citizen {
     private String surname;
     private int age;
     private City residence;
-
     private static int countId;
 
     public Citizen(City residence) {

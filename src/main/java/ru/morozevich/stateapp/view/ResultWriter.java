@@ -16,7 +16,7 @@ public class ResultWriter {
                     .append(region)
                     .append("\n");
             for (Citizen citizen : foundCitizen) {
-                if (citizen.getResidence().getDistrict().getRegion() == region) {
+                if (citizen.getRegion() == region) {
                     buffer.append("Житель: ")
                             .append(citizen)
                             .append("\n");

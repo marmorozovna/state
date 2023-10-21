@@ -8,15 +8,9 @@ import java.util.Random;
 public class City {
 
     private final District district;
-
     private boolean isRegionCenter;
-
     private boolean isCapital;
-
     private final String name;
-
-    private ArrayList<Citizen> citizens = new ArrayList<>();
-
     private static ArrayList<Citizen> allCitizens = new ArrayList<>();
 
     City(District district, boolean isRegionCenter, boolean isCapital) {
@@ -29,7 +23,6 @@ public class City {
         int citizenQuantity = random.nextInt(1, 51);
         for (int i = 0; i < citizenQuantity; i++) {
             Citizen citizen = new Citizen(this);
-            citizens.add(citizen);
             allCitizens.add(citizen);
         }
     }

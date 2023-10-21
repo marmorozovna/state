@@ -7,11 +7,11 @@ import java.util.ArrayList;
 
 public class StateService {
 
-    public static int getQuantityRegions (){
+    public static int getQuantityRegions() {
         return State.getInstance().getRegions().size();
     }
 
-    public static int getStateSquare (){
+    public static int getStateSquare() {
         return State.getInstance().getSquare();
     }
 

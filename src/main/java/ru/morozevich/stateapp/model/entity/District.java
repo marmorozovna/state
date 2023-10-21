@@ -10,7 +10,6 @@ public class District {
     private String name;
     private boolean isCapitalCenter;
     private boolean isRegionCenter;
-    private ArrayList<City> cities = new ArrayList<>();
     private static ArrayList<City> allCities = new ArrayList<>();
 
     District(Region region, boolean isCapitalCenter, boolean isRegionCenter) {
@@ -22,17 +21,14 @@ public class District {
         Random random = new Random();
         if (isCapitalCenter) {
             City capitalCity = new City(this, true, true);
-            cities.add(capitalCity);
             allCities.add(capitalCity);
         } else if (isRegionCenter) {
             City regionCenterCity = new City(this, true, false);
-            cities.add(regionCenterCity);
             allCities.add(regionCenterCity);
         }
         int cityQuantity = random.nextInt(5, 11);
         for (int i = 0; i < cityQuantity; i++) {
             City city = new City(this, false, false);
-            cities.add(city);
             allCities.add(city);
         }
     }

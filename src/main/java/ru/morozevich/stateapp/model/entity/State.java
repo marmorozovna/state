@@ -5,6 +5,7 @@ import java.util.Random;
 
 public class State {
     private static State instance;
+    private int square;
     private ArrayList<Region> regions = new ArrayList<>();
 
     private State() {
@@ -25,8 +26,6 @@ public class State {
         }
         return instance;
     }
-
-    private int square;
 
     public int getSquare() {
         if (square == 0) {
